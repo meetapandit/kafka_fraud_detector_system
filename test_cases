@@ -1,0 +1,28 @@
+1. After setting up kafka cluster in docker on a separate network check broker  logs to see if the updated replication factor and partitions are set up correctly using the below command on terminal  in your current working directory (where docker-compose.kafka.yml file is saved)
+
+docker-compose -f docker-compose.kafka.yml logs kafka
+
+2. Once the producer python app is displaying  events on the console double check if the events are received by the topic in kafka cluster in docker using the following command on terminal in your current working directory
+	2.1 After running the producer app, check if the topic is created in the broker using below:
+
+	docker-compose -f docker-compose.kafka.yml exec kafka kafka-topics --bootstrap-server kafka:9092 --list
+
+	2.2 Steps to validate connection between python producer app and kafka broker topic
+
+		1. Run the above command
+		2. Then docker-compose up and start the producer app
+		3. The producer will start to output events on the console. But this does not guarantee if the topic is receiving the events in kafka docker
+		4. Run the below command in a separate terminal from your current working directory: 
+
+		docker-compose -f docker-compose.kafka.yml exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic transactions_mp
+
+
+3. After setting up consumer client, validate if the new topics created by the consumer on reading messages from the input topic are received by the new topics by the following commands.
+
+# Check if legit topic has events which pass the condition from detector
+docker-compose -f docker-compose.kafka.yml exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic streaming.transactions.legit
+
+# Check if fraud topic has events which pass the condition from detector
+docker-compose -f docker-compose.kafka.yml exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic streaming.transactions.fraud
+
+In this case the decetor after consuimg messages from the input topic creates 2 new topics for classifying transactions as fraud vs legit.

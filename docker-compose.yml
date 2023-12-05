@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  generator:
+    build: ./generator
+    environment:
+      KAFKA_BROKER_URL: kafka:9092
+      TRANSACTIONS_TOPIC: transactions_mp
+      TRANSACTIONS_PER_SECOND: 1000
+  
+  detector:
+    build: ./detector
+    environment:
+      KAFKA_BROKER_URL: kafka:9092
+      TRANSACTIONS_TOPIC: transactions_mp
+      LEGIT_TOPIC: streaming.transactions.legit
+      FRAUD_TOPIC: streaming.transactions.fraud
+
+# NEW
+networks:
+  default:
+    name: kafka-network
+    external: true
