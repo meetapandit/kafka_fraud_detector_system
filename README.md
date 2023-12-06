@@ -1,15 +1,17 @@
 # Event Streaming using Kafka - Fraud detector System
 
-The goal of this project was to build a simple fraud detector app which produces fake transactions using kafka-python client and then consumes the received events to classify the transactions as FRAUD vs LEGIT
+The goal of this project was to build a simple fraud detector app that produces fake transactions using kafka-python client and then consumes the received events to classify the transactions as FRAUD vs LEGIT
 
 ## High-level Architecture
 
-<div align=”center”>![fraud_detector_app_architecture drawio](https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/1c2b7bcc-88f7-4d4a-9a41-6c5b41156c14)</div>
+<p align="center">
+  <img src="https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/1c2b7bcc-88f7-4d4a-9a41-6c5b41156c14"> 
+</p>
 
 # Detailed Walkthrough
 - There are 2 steps to the fraud detection system architecture
 - Generator
-  - The Generator or Kafka Producer application that generates fake transactions with source_id, target_id, amount and currency
+  - The Generator or Kafka Producer application that generates fake transactions with source_id, target_id, amount, and currency
   - This is a Python application that is implemented using the kafka-python client
   - The generated events are sent to Kafka topic for further transformation
 - Detector
