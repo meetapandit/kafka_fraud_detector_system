@@ -8,7 +8,7 @@ The goal of this project was to build a simple fraud detector app that produces 
   <img src="https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/1c2b7bcc-88f7-4d4a-9a41-6c5b41156c14"> 
 </p>
 
-# Detailed Walkthrough
+## Detailed Walkthrough
 - There are 2 steps to the fraud detection system architecture
 - Generator
   - The Generator or Kafka Producer application that generates fake transactions with source_id, target_id, amount, and currency
@@ -21,7 +21,7 @@ The goal of this project was to build a simple fraud detector app that produces 
       - Fraud_transactions topic to filter transactions that are fraud based on the condition
       - Legit_transactions topic to filter transactions that are legitimate based on the condition
 
-# Workflow
+## Workflow
 - Kafka cluster with 1 broker and replication factor of 1 hosted on docker on an isolated network separate from all other apps
   - The config for the Kafka cluster is defined in docker-compose.kafka.yml with zookeeper and broker config settings along with the network name for running Kafka cluster in an isolated container
 - Producer and Consumer are Python apps implemented with the kafka-python client
