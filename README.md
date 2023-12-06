@@ -30,17 +30,27 @@ The goal of this project was to build a simple fraud detector app that produces 
 ## Screenshots for test cases to check producer, consumer, and new topics created by consumer for classifying transactions
 
 - Validate if the producer sends events to the transactions topic in Kafka
-![events_received_by_topic_from_producer](https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/85040c27-9f2c-489f-9022-5a2d26af648e)
+<p align="center"> 
+  <img src="https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/85040c27-9f2c-489f-9022-5a2d26af648e"> 
+</p>
 
 - Testcase for validating legit transactions
-![test_case_legit_transactions](https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/7120b9e8-08d3-445c-9a6b-9c4bec7a522b)
+<p align="center"> 
+  <img src="https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/7120b9e8-08d3-445c-9a6b-9c4bec7a522b">
+</p>
 
-- Console output of the actual number of transactions read by the consumer, processed, and sent to a new topic: streaming.transactions.legit
-![legit_transactions](https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/aa259bf4-7aad-497e-aee9-fb0603e07b7b)
+- Console output of the actual number of transactions read by the consumer, processed and sent to a new topic streaming.transactions.legit
+<p align="center"> 
+  <img src="https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/aa259bf4-7aad-497e-aee9-fb0603e07b7b">
+</p>
 
 - Testcase for validating fraud transactions
-![test_case_fraud_detection_topic](https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/2dcfcfa8-ae3f-49b4-9710-b8bdb78ea01e)
+<p align="center"> 
+  <img src="https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/2dcfcfa8-ae3f-49b4-9710-b8bdb78ea01e">
+</p>
 
-- Console output of the actual number of transactions read by the consumer, processed, and sent to a new topic: streaming.transactions.fraud
-![fraud_transactions](https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/ca0fea4f-1fb2-481c-bf4e-768fdc33cedd)
+- Console output of the actual number of transactions read by the consumer, processed and sent to a new topic streaming.transactions.fraud
+<p align="center"> 
+  <img src="https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/ca0fea4f-1fb2-481c-bf4e-768fdc33cedd">
+</p>
 
