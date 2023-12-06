@@ -2,7 +2,7 @@
 
 The goal of this project was to build a simple fraud detector app which produces fake transactions using kafka-python client and then consumes the received events to classify the transactions as FRAUD vs LEGIT
 
-High-level Architecture
+## High-level Architecture
 
 <div align=”center”>![fraud_detector_app_architecture drawio](https://github.com/meetapandit/kafka_fraud_detector_system/assets/15186489/1c2b7bcc-88f7-4d4a-9a41-6c5b41156c14)</div>
 
@@ -25,7 +25,7 @@ High-level Architecture
 - Producer and Consumer are Python apps implemented with the kafka-python client
 - Both generator and detector apps have requirements.txt files to handle dependencies and docker-compose.yml with environment variables declared for running generator and detector programs
 
-# Screenshots for test cases to check producer, consumer, and new topics created by consumer for classifying transactions
+## Screenshots for test cases to check producer, consumer, and new topics created by consumer for classifying transactions
 
 - Validate if the producer sends events to the transactions topic in Kafka
 
